@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:KeyboardSample" 
+             x:Class="KeyboardSample.MainPage" 
+             xmlns:views="clr-namespace:KeyboardSample.Controls"
+             BackgroundColor="LightBlue">
+     <views:KeyboardView Padding="0,60,0,0"
+                         VerticalOptions="FillAndExpand">
+                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="*" />
+                  </Grid.RowDefinitions>
+                    
+                 <Image Source="ic_test"
+                        HeightRequest="80"
+                        WidthRequest="80"
+                        HorizontalOptions="CenterAndExpand"
+                        Grid.Row="0"/>
+                    
+                 <Label Text="Login"
+                        FontAttributes="Bold"
+                        TextColor="CornflowerBlue"
+                        HorizontalOptions="CenterAndExpand"
+                        FontSize="25"
+                        VerticalOptions="Center"
+                        Margin="0,20,0,0"
+                        Grid.Row="1"
+                        x:Name="welcomeText"/>
+                    
+            
+                 <Entry Placeholder="Email"
+                        Grid.Row="2"
+                        Margin="20,0" 
+                        ReturnCommand="{Binding OnLoginCommand}"
+                        x:Name="email" 
+                        ReturnType="Done"
+                        Keyboard="Email"/>
+        
+                 <Entry Placeholder="Password"
+                        Margin="20,0" 
+                        Grid.Row="3"
+                        HeightRequest="50"
+                        x:Name="password" 
+                        ReturnCommand="{Binding OnLoginCommand}"
+                        ReturnType="Done"
+                        IsPassword="true"/>
+                    
+                
+                <Button VerticalOptions="EndAndExpand"
+                        BackgroundColor="CornflowerBlue"
+                        HeightRequest="60"
+                        TextColor="White"
+                        CornerRadius="0"
+                        Grid.Row="4"
+                        Text="Login"/>
+            </views:KeyboardView>
+</ContentPage>
